@@ -1,3 +1,4 @@
+import cv2.data
 from flask import Flask, render_template, Response, request
 import cv2
 

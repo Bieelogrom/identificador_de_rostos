@@ -2,6 +2,6 @@
 
 {% block conteudo %}
   <div style="width: 100%; height: 100%;">
-    <img src="{{ url_for('video_capture') }}" height="80%" width="100%" alt="vídeo da sua câmera" />
+    <img src="{{ url_for('video_capture') }}" onerror="console.log('Erro ao carregar Stream')" height="80%" width="100%" alt="vídeo da sua câmera" />
   </div>
 {% endblock %}
