@@ -1,10 +1,8 @@
 import cv2.data
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template, Response
 import cv2
 
 app = Flask(__name__)
-
-
 
 def capture_by_frames(): 
     global camera
@@ -29,7 +27,6 @@ def home():
 @app.route("/ligar",methods=['POST'])
 def ligar():
     return render_template('ligar.html')
-
 
 @app.route("/desligar",methods=['POST'])
 def desligar():
