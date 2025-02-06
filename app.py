@@ -42,3 +42,4 @@ if __name__ == "__main__":
     app.run(debug=True,port=8000,use_reloader=False)
     
 
+# Código desenvolvido em 2025/02
