@@ -19,7 +19,7 @@ Este projeto é um identificador de rostos desenvolvido em Python. Ele permite q
 
 1. Clone o repositório:
      ```bash
-     git clone --branch pythoneverwhere https://github.com/seu-usuario/identificador_de_rostos.git
+     git clone https://github.com/seu-usuario/identificador_de_rostos.git
      ```
 2. Navegue até o diretório do projeto:
      ```bash
