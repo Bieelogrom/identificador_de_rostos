@@ -2,15 +2,18 @@ import cv2.data
 from flask import Flask, render_template, Response, request
 import cv2
 
-app = Flask(__name__, template_folder="./templates")
+app = Flask(__name__)
+
+
 
 def capture_by_frames(): 
     global camera
     camera = cv2.VideoCapture(0)
     while True:
-        success, frame = camera.read() 
+        success, frame = camera.read()  
         detector=cv2.CascadeClassifier('Haarcascades/haarcascade_frontalface_default.xml')
         faces=detector.detectMultiScale(frame,1.2,6)
+     
         for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 3)
 
@@ -36,7 +39,7 @@ def desligar():
  
 @app.route('/video_capture')
 def video_capture():
-    return Response(capture_by_frames(), mimetype='multipart/x-mixed-replace; boudary=frame')
+    return Response(capture_by_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
         
 if __name__ == "__main__":
     app.run(debug=True,port=8000,use_reloader=False)
